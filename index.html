@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sureshihan Sathiyanantham | Biotechnology E-Portfolio</title>
+  <meta name="description" content="E-portfolio of Sureshihan Sathiyanantham, a BSc (Hons) Biotechnology undergraduate at SLIIT.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #F3F8F7;
+  --surface: #FFFFFF;
+  --ink: #12332F;
+  --muted: #4A6662;
+  --line: #CFE0DC;
+  --accent: #0B7A6E;
+  --accent-strong: #08574F;
+  --glow: #7CF5DC;
+  --dish: #0B2B2A;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --text: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
 
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+a { color: var(--accent-strong); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0.5rem;
+  background: var(--ink); color: #fff; padding: 0.5rem 1rem; z-index: 20;
+}
+.skip-link:focus { left: 0.5rem; }
+
+/* Navigation */
+.site-nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(243, 248, 247, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.site-nav ul {
+  list-style: none; margin: 0 auto; padding: 0.75rem 1.5rem;
+  max-width: 1080px; display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem;
+}
+.site-nav a {
+  font-family: var(--display); font-weight: 500; font-size: 0.98rem;
+  color: var(--ink); text-decoration: none; padding: 0.15rem 0;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { border-bottom-color: var(--accent); }
+
+main, .site-footer { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Hero */
+.hero {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem;
+  align-items: center; padding: 4.5rem 0 4rem;
+}
+.hero h1 {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(2.6rem, 6.2vw, 4.6rem); line-height: 1.02;
+  letter-spacing: -0.02em; margin: 0 0 1.25rem;
+}
+.hero .role { font-family: var(--display); font-size: 1.35rem; font-weight: 500; margin: 0 0 0.75rem; }
+.hero .summary { max-width: 34rem; color: var(--muted); margin: 0 0 2rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.button {
+  font-family: var(--display); font-weight: 700; font-size: 1rem;
+  text-decoration: none; padding: 0.75rem 1.4rem; border-radius: 6px;
+  border: 2px solid var(--accent); transition: background-color 0.15s, color 0.15s;
+}
+.button.primary { background: var(--accent); color: #fff; }
+.button.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
+.button.secondary { background: transparent; color: var(--accent-strong); }
+.button.secondary:hover { background: var(--accent); color: #fff; }
+
+.dish { margin: 0; }
+.dish svg { width: 100%; height: auto; display: block; }
+.dish figcaption { font-size: 0.95rem; color: var(--muted); margin-top: 0.75rem; text-align: center; }
+.colony { fill: var(--glow); filter: url(#glow); }
+.colony.pulse { animation: glow-pulse 4.5s ease-in-out infinite; }
+.colony.pulse.late { animation-delay: 1.8s; }
+@keyframes glow-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+/* Content sections */
+.block {
+  display: grid; grid-template-columns: 220px 1fr; gap: 2rem;
+  padding: 3rem 0; border-top: 1px solid var(--line);
+}
+.block h2 {
+  font-family: var(--display); font-weight: 700; font-size: 1.6rem;
+  line-height: 1.2; margin: 0; letter-spacing: -0.01em;
+}
+.block h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; margin: 0 0 0.25rem; }
+.block p { margin: 0 0 1rem; max-width: 40rem; }
+.block p:last-child { margin-bottom: 0; }
+
+.about-body { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; align-items: start; }
+.portrait { width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 4px solid var(--surface); box-shadow: 0 0 0 2px var(--line); background: #D5E8E4; }
+
+.entry { padding: 0 0 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.entry:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.entry .meta { color: var(--muted); font-size: 1rem; margin: 0 0 0.5rem; }
+.entry .links { font-size: 1rem; margin-top: 0.5rem; }
+
+.skill-group { margin-bottom: 1.5rem; }
+.skill-group:last-child { margin-bottom: 0; }
+.skill-group ul, .plain-list { margin: 0; padding-left: 1.2rem; }
+.skill-group li, .plain-list li { margin-bottom: 0.25rem; }
+
+.contact-line { font-size: 1.3rem; font-family: var(--display); font-weight: 500; }
+
+.site-footer { border-top: 1px solid var(--line); padding: 2rem 1.5rem 3rem; color: var(--muted); font-size: 0.95rem; }
+
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; padding-top: 2.5rem; gap: 2rem; }
+  .dish { max-width: 320px; }
+  .block { grid-template-columns: 1fr; gap: 1rem; padding: 2.25rem 0; }
+  .about-body { grid-template-columns: 1fr; }
+  .portrait { width: 160px; height: 160px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .colony.pulse { animation: none; }
+}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="#about">About me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div>
+        <h1>Sureshihan Sathiyanantham</h1>
+        <p class="role">Biotechnology undergraduate at SLIIT</p>
+        <p class="summary">I study molecular biology and bioinformatics, and I want to build a career in scientific research.</p>
+        <div class="actions">
+          <a class="button primary" href="HS26510040_Sureasikan.%20S%20%281%29.pdf" download>Download resume</a>
+          <a class="button secondary" href="#projects">View my projects</a>
+        </div>
+      </div>
+
+      <figure class="dish">
+        <svg viewBox="0 0 400 400" role="img" aria-label="A petri dish with glowing blue-green bacterial colonies">
+          <defs>
+            <radialGradient id="agar" cx="45%" cy="40%" r="70%">
+              <stop offset="0" stop-color="#17504C"/>
+              <stop offset="1" stop-color="#0B2B2A"/>
+            </radialGradient>
+            <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <circle cx="200" cy="200" r="192" fill="#DDEBE8" stroke="#B7D3CE" stroke-width="3"/>
+          <circle cx="200" cy="200" r="172" fill="url(#agar)"/>
+          <circle cx="200" cy="200" r="172" fill="none" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="2"/>
+          <g>
+            <circle class="colony pulse" cx="150" cy="140" r="9"/>
+            <circle class="colony" cx="235" cy="120" r="6"/>
+            <circle class="colony pulse late" cx="270" cy="190" r="11"/>
+            <circle class="colony" cx="210" cy="250" r="8"/>
+            <circle class="colony" cx="140" cy="230" r="6"/>
+            <circle class="colony pulse" cx="300" cy="260" r="5"/>
+            <circle class="colony" cx="180" cy="320" r="7"/>
+            <circle class="colony pulse late" cx="255" cy="300" r="9"/>
+            <circle class="colony" cx="110" cy="180" r="5"/>
+            <circle class="colony" cx="200" cy="170" r="4"/>
+            <circle class="colony" cx="310" cy="140" r="4"/>
+            <circle class="colony" cx="120" cy="290" r="4"/>
+            <circle class="colony" cx="230" cy="200" r="3"/>
+          </g>
+        </svg>
+        <figcaption>Glowing colonies, a nod to my <em>Vibrio fischeri</em> poster.</figcaption>
+      </figure>
+    </header>
+
+    <section class="block" id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About me</h2>
+      <div class="about-body">
+        <img class="portrait" src="e%20portfolio%20assignment.jpeg" alt="Portrait of Sureshihan Sathiyanantham" width="200" height="200">
+        <div>
+          <p>Hi, I'm Sureshihan, a Biotechnology undergraduate at SLIIT with a strong interest in scientific research, molecular biology and bioinformatics.</p>
+          <p>I enjoy learning new skills and exploring innovative ideas, and I want to build my knowledge so that I can contribute to the advancement of biotechnology.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="education" aria-labelledby="education-h">
+      <h2 id="education-h">Educational qualifications</h2>
+      <div>
+        <div class="entry">
+          <h3>BSc (Hons) in Biotechnology</h3>
+          <p class="meta">Sri Lanka Institute of Information Technology (SLIIT), currently in Year 1, Semester 1</p>
+          <p>Higher education. My coursework combines laboratory chemistry and biology with presentations and information technology.</p>
+        </div>
+        <div class="entry">
+          <h3>G.C.E. Advanced Level, Biology stream</h3>
+          <p class="meta">Kilinochchi Maha Vidyalayam</p>
+          <p>Secondary education.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="projects" aria-labelledby="projects-h">
+      <h2 id="projects-h">Academic projects</h2>
+      <div>
+        <div class="entry">
+          <h3><em>Vibrio fischeri</em> research poster</h3>
+          <p>A research poster on the bioluminescent marine bacterium <em>Vibrio fischeri</em>.</p>
+          <p class="links"><a href="https://en.wikipedia.org/wiki/Aliivibrio_fischeri" target="_blank" rel="noopener noreferrer">Background reading on Aliivibrio fischeri (opens in a new tab)</a></p>
+        </div>
+        <div class="entry">
+          <h3>Katalin Karikó role-model presentation</h3>
+          <p>A presentation on Katalin Karikó, her mRNA research and why she inspires my own career goals.</p>
+          <p class="links"><a href="https://en.wikipedia.org/wiki/Katalin_Karik%C3%B3" target="_blank" rel="noopener noreferrer">Background reading on Katalin Karikó (opens in a new tab)</a></p>
+        </div>
+        <div class="entry">
+          <h3>Rapid DNA analysis group video</h3>
+          <p>A group video assignment explaining rapid DNA analysis, completed as part of a team.</p>
+        </div>
+        <div class="entry">
+          <h3>Chemistry laboratory coursework</h3>
+          <p>Practical work in titration, solution preparation and chromatography.</p>
+          <p class="links"><a href="https://en.wikipedia.org/wiki/Chromatography" target="_blank" rel="noopener noreferrer">Background reading on chromatography (opens in a new tab)</a></p>
+        </div>
+        <div class="entry">
+          <h3>Laboratory safety coursework</h3>
+          <p>Study of autoclave standard operating procedures, biosafety and chemical waste disposal.</p>
+          <p class="links"><a href="https://en.wikipedia.org/wiki/Autoclave" target="_blank" rel="noopener noreferrer">Background reading on autoclaves (opens in a new tab)</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <div>
+        <div class="skill-group">
+          <h3>Science</h3>
+          <ul>
+            <li>Scientific research and presentation</li>
+            <li>Basic laboratory concepts</li>
+            <li>Laboratory safety awareness</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Personal</h3>
+          <ul>
+            <li>Critical thinking</li>
+            <li>Analytical thinking</li>
+            <li>Teamwork and communication</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="experience" aria-labelledby="experience-h">
+      <h2 id="experience-h">Experience and certifications</h2>
+      <div>
+        <div class="entry">
+          <h3>Laboratory experience</h3>
+          <p>Hands-on practical sessions at SLIIT, including autoclave use.</p>
+        </div>
+        <div class="entry">
+          <h3>Professional certifications</h3>
+          <p>I have no confirmed certifications yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="hobbies" aria-labelledby="hobbies-h">
+      <h2 id="hobbies-h">Hobbies</h2>
+      <ul class="plain-list">
+        <li>Exploring biotechnology and scientific discoveries</li>
+        <li>Learning about technology and artificial intelligence</li>
+        <li>Exploring new gadgets and software</li>
+      </ul>
+    </section>
+
+    <section class="block" id="resume" aria-labelledby="resume-h">
+      <h2 id="resume-h">Resume</h2>
+      <div>
+        <p>My full resume is available as a PDF.</p>
+        <p><a class="button primary" href="HS26510040_Sureasikan.%20S%20%281%29.pdf" download>Download resume (PDF)</a></p>
+      </div>
+    </section>
+
+    <section class="block" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact details</h2>
+      <div>
+        <p>I'm happy to hear about internships, lab opportunities and study groups.</p>
+        <p class="contact-line">Email: <a href="mailto:sureshikan0@gmail.com">sureshikan0@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Sureshihan Sathiyanantham. Built with HTML, CSS and GitHub Pages for SC1172, Introduction to Information Technology.</p>
+  </footer>
+</body>
+</html>
